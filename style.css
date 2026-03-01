@@ -1,0 +1,480 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  color: #f5f0e8;
+  font-family: "Cormorant Garamond", serif;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 60px;
+  background: #0a0a0a;
+}
+
+.nav-logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.12em;
+  color: #f5f0e8;
+  margin: 0 0;
+}
+
+.nav-logo span {
+  color: #c9a84c;
+}
+
+.nav-links {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: #f5f0e8;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #c9a84c;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--gold);
+  text-decoration: none;
+}
+.nav-cart svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 50%;
+  font-family: "Space Mono", monospace;
+  font-size: 0.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: #0a0a0a;
+  background: #c9a84c;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #f5f0e8;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 60px 80px;
+}
+
+.hero-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 5rem;
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s forwards;
+  padding-top: 2rem;
+}
+
+.hero-title em {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.6em;
+  color: #c9a84c;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 25px;
+}
+
+.btn-ghost {
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: #f5f0e8;
+  text-decoration: none;
+  border-bottom: 1px solid #c9a84c;
+  padding-bottom: 2px;
+  transition: color 0.3s;
+}
+
+.btn-ghost:hover {
+  color: #c9a84c;
+}
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 60% 40%,
+      rgba(201, 168, 76, 0.12) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 20% 80%,
+      rgba(184, 74, 46, 0.08) 0%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, #1a1410 0%, #0a0a0a 100%);
+}
+
+.hero-shoe-display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.shoe-art {
+  width: 520px;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shoe-art img {
+  width: 420px;
+  display: block;
+  transform: rotate(-15deg);
+  filter: drop-shadow(0 0 60px rgba(201, 168, 76, 0.3))
+    drop-shadow(0 30px 60px rgba(0, 0, 0, 0.8));
+  animation: float 2s ease-in-out infinite;
+}
+
+/* MARQUEE */
+.marquee-strip {
+  background: #c9a84c;
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-inner {
+  animation: marquee 18s linear infinite;
+}
+
+.marquee-item {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: #0a0a0a;
+  padding: 0 40px;
+}
+
+.marquee-dot {
+  color: #b84a2e;
+}
+
+/* COLLECTION SECTION */
+.section-header {
+  padding: 60px 60px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.section-label {
+  font-family: "Space Mono", monospace;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.9;
+  color: #f5f0e8;
+}
+
+.section-title em {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: #c9a84c;
+}
+
+/* PRODUCT GRID */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 0 60px 30px;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  aspect-ratio: 3/4;
+}
+
+.product-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.product-image {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.product-image img {
+  width: 180px;
+  display: block;
+  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.7));
+}
+
+.product-card:first-child .product-image img {
+  width: 240px;
+}
+
+.product-card:hover .product-image {
+  transform: translate(-50%, -60%) scale(1.05) rotate(-5deg);
+}
+
+.product-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.95) 0%,
+    transparent 100%
+  );
+  transform: translateY(0);
+}
+
+.product-name {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  color: #f5f0e8;
+}
+
+.product-price {
+  font-family: "Space Mono", monospace;
+  font-size: 0.9rem;
+  color: #c9a84c;
+}
+
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  margin: 0 60px;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+.story-left {
+  background: linear-gradient(135deg, #1a1408 0%, #0d0d0d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  position: relative;
+}
+
+.big-quote {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 2.5rem;
+  line-height: 1.4;
+  color: #f5f0e8;
+}
+
+.story-right {
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #8a8070;
+  margin-bottom: 20px;
+}
+
+.story-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.stat-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  color: #c9a84c;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: "Space Mono", monospace;
+  font-size: 1rem;
+  color: #8a8070;
+  margin-top: 4px;
+}
+
+footer {
+  background: #050505;
+  border-top: 1px solid rgba(201, 168, 76, 0.1);
+  padding: 80px 60px 40px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-copy {
+  font-family: "Space Mono", monospace;
+  font-size: 0.6rem;
+  color: #8a8070;
+  letter-spacing: 0.1em;
+}
+
+.footer-social {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-social a {
+  font-family: "Space Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8a8070;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #c9a84c;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  50% {
+    transform: rotate(-15deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-15deg) translateY(-16px);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

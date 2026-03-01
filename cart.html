@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NISHUZE — Your Cart</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="collectionStyles.css">
+  <link rel="stylesheet" href="cartStyles.css">
+</head>
+
+<body>
+  <nav>
+    <a class="nav-logo">NISH<span>U</span>ZE</a>
+    <ul class="nav-links">
+      <li><a href="collection.html">COLLECTION</a></li>
+      <li><a href="index.html#story">OUR STORY</a></li>
+      <li><a href="collection.html">SHOP</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="nav-cart" title="Cart">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        <span class="cart-badge">3</span>
+      </a>
+      <a href="login.html" class="btn">Sign In</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div>
+      <p class="page-label">Review Order</p>
+      <h1 class="page-title">Your <em>Cart</em></h1>
+    </div>
+    <p class="item-count">3 Items</p>
+  </div>
+
+  <div class="cart-layout">
+
+    <div class="cart-items">
+
+      <div class="cart-item">
+        <div class="item-img">
+          <img src="assets/product1.png" alt="Vortex Pro" />
+        </div>
+        <div class="item-details">
+          <p class="item-category">Sneakers</p>
+          <p class="item-name">Vortex Pro</p>
+          <div class="item-meta">
+            <span>Size: UK 9</span>
+            <span>Color: Red / White</span>
+          </div>
+          <div class="item-qty">
+            <button class="qty-btn">−</button>
+            <div class="qty-val">1</div>
+            <button class="qty-btn">+</button>
+          </div>
+        </div>
+        <div class="item-actions">
+          <button class="btn-remove">
+            <svg viewBox="0 0 24 24">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+            Remove
+          </button>
+          <button class="btn-wishlist">
+            <svg viewBox="0 0 24 24" width="12" height="12">
+              <path fill="red"
+                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+            </svg>
+            Save for Later
+          </button>
+          <p class="item-subtotal">₹12,999</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="cart-item">
+        <div class="item-img">
+          <img src="assets/product3.png" alt="Onyx Boot" />
+        </div>
+        <div class="item-details">
+          <p class="item-category">Boots</p>
+          <p class="item-name">Onyx Boot</p>
+          <div class="item-meta">
+            <span>Size: UK 8</span>
+            <span>Color: Black</span>
+          </div>
+          <div class="item-qty">
+            <button class="qty-btn">−</button>
+            <div class="qty-val">1</div>
+            <button class="qty-btn">+</button>
+          </div>
+        </div>
+        <div class="item-actions">
+          <button class="btn-remove">
+            <svg viewBox="0 0 24 24">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+            Remove
+          </button>
+          <button class="btn-wishlist">
+            <svg viewBox="0 0 24 24" width="12" height="12">
+              <path fill="red"
+                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+            </svg>
+            Save for Later
+          </button>
+          <p class="item-subtotal"><del style="color:var(--muted);font-size:0.75rem">₹15,999</del> ₹12,799</p>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <div class="item-img">
+          <img src="assets/product5.png" alt="Drift Sandal" />
+        </div>
+        <div class="item-details">
+          <p class="item-category">Sandals</p>
+          <p class="item-name">Drift Sandal</p>
+          <div class="item-meta">
+            <span>Size: UK 9</span>
+            <span>Color: Tan</span>
+          </div>
+          <div class="item-qty">
+            <button class="qty-btn">−</button>
+            <div class="qty-val">2</div>
+            <button class="qty-btn">+</button>
+          </div>
+        </div>
+        <div class="item-actions">
+          <button class="btn-remove">
+            <svg viewBox="0 0 24 24">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+            Remove
+          </button>
+          <button class="btn-wishlist">
+            <svg viewBox="0 0 24 24" width="12" height="12">
+              <path fill="red"
+                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+            </svg>
+            Save for Later
+          </button>
+          <p class="item-subtotal">₹7,598</p>
+        </div>
+      </div>
+
+      <div class="continue-strip">
+        <a href="collection.html" class="btn-continue">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          Continue Shopping
+        </a>
+      </div>
+
+    </div>
+
+    <div class="order-summary">
+      <h2 class="summary-title">Order <em>Summary</em></h2>
+
+      <div class="summary-row">
+        <span class="summary-label">Subtotal (4 items)</span>
+        <span class="summary-value">₹33,396</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Discount (Sale items)</span>
+        <span class="summary-value discount">− ₹3,200</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Shipping</span>
+        <span class="summary-value">Free</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Tax (GST 18%)</span>
+        <span class="summary-value">₹5,436</span>
+      </div>
+
+      <div class="summary-divider"></div>
+
+      <div class="promo-applied">
+        <svg viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        NSHUZE10 — 10% off applied
+      </div>
+
+      <div class="summary-row">
+        <span class="summary-label">Promo Discount</span>
+        <span class="summary-value discount">− ₹3,340</span>
+      </div>
+
+      <div class="summary-divider"></div>
+
+      <div class="summary-total-row">
+        <div>
+          <p class="total-label">Total Payable</p>
+          <p class="total-note">Inclusive of all taxes</p>
+        </div>
+        <p class="total-value">₹32,292</p>
+      </div>
+
+      <div class="promo-box">
+        <input class="promo-input" type="text" placeholder="Add promo code" value="NSHUZE10" readonly />
+        <button class="promo-btn">Apply</button>
+      </div>
+
+      <button class="btn-checkout">Proceed to Checkout →</button>
+
+      <p class="checkout-note">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+          <path d="M7 11V7a5 5 0 0110 0v4" />
+        </svg>
+        Secure checkout · SSL encrypted
+      </p>
+
+      <div class="payment-icons">
+        <span class="pay-icon">Visa</span>
+        <span class="pay-icon">MC</span>
+        <span class="pay-icon">UPI</span>
+        <span class="pay-icon">GPay</span>
+        <span class="pay-icon">COD</span>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="upsell-section">
+    <div class="upsell-header">
+      <div>
+        <h2 class="upsell-title">You May <em>Also Like</em></h2>
+      </div>
+      <a href="collection.html" class="upsell-link">Browse All →</a>
+    </div>
+    <div class="upsell-grid">
+
+      <div class="upsell-card">
+        <div class="upsell-img"><img src="assets/product2.png" alt="Ember Low" /></div>
+        <div class="upsell-info">
+          <p class="upsell-name">Ember Low</p>
+          <p class="upsell-price">₹9,499</p>
+          <button class="upsell-add">+ Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="upsell-card">
+        <div class="upsell-img"><img src="assets/product4.png" alt="Mira Slide" /></div>
+        <div class="upsell-info">
+          <p class="upsell-name">Mira Slide</p>
+          <p class="upsell-price">₹5,299</p>
+          <button class="upsell-add">+ Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="upsell-card">
+        <div class="upsell-img"><img src="assets/product6.png" alt="Fitness Streak" /></div>
+        <div class="upsell-info">
+          <p class="upsell-name">Fitness Streak</p>
+          <p class="upsell-price">₹4,799</p>
+          <button class="upsell-add">+ Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="upsell-card">
+        <div class="upsell-img"><img src="assets/product1.png" alt="Vortex Pro" /></div>
+        <div class="upsell-info">
+          <p class="upsell-name">Nova Flash</p>
+          <p class="upsell-price">₹18,999</p>
+          <button class="upsell-add">+ Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">NISH<span>U</span>ZE</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="login.html">Account</a>
+    </div>
+    <p class="footer-copy">© 2026 Nishuze</p>
+  </footer>
+</body>
+
+</html>

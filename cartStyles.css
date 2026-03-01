@@ -1,0 +1,663 @@
+.page-header {
+  padding: 70px 50px 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.page-label {
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 30px;
+}
+
+.item-count {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2px;
+  padding: 2px;
+  min-height: 70vh;
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 32px;
+  align-items: center;
+  padding: 36px 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cart-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+}
+
+.cart-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cart-item:hover::before {
+  transform: scaleY(1);
+}
+
+.item-img {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.item-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(201, 168, 76, 0.1),
+    transparent 70%
+  );
+}
+
+.item-img img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
+  transition: transform 0.4s ease;
+}
+
+.cart-item:hover .item-img img {
+  transform: scale(1.06) translateY(-4px);
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-category {
+  font-family: "Space Mono", monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.item-name {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.item-meta {
+  display: flex;
+  gap: 20px;
+  margin-top: 4px;
+}
+
+.item-meta span {
+  font-family: "Space Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+}
+
+.item-qty {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 14px;
+  width: fit-content;
+}
+
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  color: var(--cream);
+  font-family: "Space Mono", monospace;
+  font-size: 1rem;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  background: var(--gold);
+}
+
+.qty-val {
+  width: 40px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--cream);
+}
+
+.item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.btn-remove {
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: "Space Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+}
+
+.btn-remove:hover {
+  color: var(--rust);
+}
+
+.btn-remove svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.btn-wishlist {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  font-family: "Space Mono", monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition:
+    border-color 0.3s,
+    color 0.3s;
+}
+
+.btn-wishlist:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.item-subtotal {
+  font-family: "Space Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--cream);
+  white-space: nowrap;
+  align-self: center;
+}
+
+.continue-strip {
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-continue {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s;
+}
+
+.btn-continue svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.btn-continue:hover {
+  color: var(--gold);
+}
+
+.order-summary {
+  padding: 48px 40px;
+  background: #161616;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: sticky;
+  top: 73px;
+  align-self: start;
+  height: fit-content;
+}
+
+.summary-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  margin-bottom: 36px;
+}
+
+.summary-title em {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.summary-row:last-of-type {
+  border-bottom: none;
+}
+
+.summary-label {
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.summary-value {
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--cream);
+}
+
+.summary-value.discount {
+  color: #6dbe8d;
+}
+
+.summary-divider {
+  height: 1px;
+  background: rgba(201, 168, 76, 0.2);
+  margin: 24px 0;
+}
+
+.summary-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 32px;
+}
+
+.total-label {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.total-value {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.total-note {
+  font-family: "Space Mono", monospace;
+  font-size: 0.55rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+
+.promo-box {
+  display: flex;
+  gap: 0;
+  margin-bottom: 28px;
+}
+
+.promo-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: none;
+  color: var(--cream);
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.promo-input::placeholder {
+  color: rgba(138, 128, 112, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.promo-input:focus {
+  border-color: var(--gold);
+}
+
+.promo-btn {
+  font-family: "Space Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--cream);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 13px 18px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.promo-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+}
+
+.promo-applied {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: #6dbe8d;
+  margin-bottom: 24px;
+  padding: 10px 14px;
+  background: rgba(109, 190, 141, 0.07);
+  border: 1px solid rgba(109, 190, 141, 0.2);
+}
+
+.promo-applied svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.btn-checkout {
+  width: 100%;
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 20px;
+  transition:
+    background 0.3s,
+    transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
+}
+
+.btn-checkout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-checkout:hover {
+  background: var(--cream);
+  transform: translateY(-2px);
+}
+
+.btn-checkout:hover::before {
+  left: 100%;
+}
+
+.checkout-note {
+  text-align: center;
+  margin-top: 16px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.checkout-note svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pay-icon {
+  font-family: "Space Mono", monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 10px;
+}
+
+.upsell-section {
+  padding: 80px 60px 100px;
+}
+
+.upsell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+}
+
+.upsell-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 0.9;
+}
+
+.upsell-title em {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.upsell-link {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+  padding-bottom: 2px;
+  transition: color 0.3s;
+}
+
+.upsell-link:hover {
+  color: var(--gold);
+}
+
+.upsell-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.upsell-card {
+  position: relative;
+  background: #0d0d0d;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.upsell-card:hover {
+  background: #111;
+}
+
+.upsell-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px 10px;
+}
+
+.upsell-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.55));
+  transition: transform 0.5s ease;
+}
+
+.upsell-card:hover .upsell-img img {
+  transform: scale(1.06) translateY(-6px);
+}
+
+.upsell-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 20px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 1) 0%,
+    rgba(10, 10, 10, 0.7) 55%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+.upsell-name {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.4rem;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.upsell-price {
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--gold);
+  margin-top: 6px;
+}
+
+.upsell-add {
+  width: 100%;
+  margin-top: 10px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(201, 168, 76, 0.08);
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  padding: 9px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.3s;
+}
+
+.upsell-card:hover .upsell-add {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.upsell-add:hover {
+  background: var(--gold);
+  color: var(--black);
+}
