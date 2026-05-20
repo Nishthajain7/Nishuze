@@ -1,0 +1,204 @@
+.wish-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 5vw 80px;
+}
+
+.page-header {
+  padding: 80px 5vw 24px;
+  border-bottom: 1px solid #1e1e1e;
+}
+.page-header .page-label {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.page-header .page-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: #fff;
+  line-height: 1;
+}
+.page-header .page-title em {
+  color: #d4af37;
+  font-style: italic;
+}
+.page-header .wish-count {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  color: #888;
+  margin-top: 8px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 100px 20px;
+}
+.empty-heart {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.3;
+}
+.empty-state h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.empty-state p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 28px;
+}
+.empty-state .btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Wishlist grid */
+.wish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  padding-top: 40px;
+}
+
+.wish-card {
+  background: #111;
+  position: relative;
+  transition: transform 0.25s;
+}
+.wish-card:hover {
+  transform: translateY(-4px);
+}
+
+.wish-card-img {
+  background: #1a1a1a;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.wish-card-img img {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  transition: transform 0.35s;
+}
+.wish-card:hover .wish-card-img img {
+  transform: scale(1.06);
+}
+
+.wish-card-body {
+  padding: 16px;
+}
+.wish-card-cat {
+  font-family: "Space Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.wish-card-name {
+  font-family: "Space Mono", monospace;
+  font-size: 0.85rem;
+  color: #fff;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+.wish-card-name:hover {
+  color: #d4af37;
+}
+.wish-card-price {
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  color: #d4af37;
+  margin-bottom: 16px;
+}
+
+.wish-card-actions {
+  display: flex;
+  gap: 10px;
+}
+.btn-move-cart {
+  flex: 1;
+  background: #d4af37;
+  color: #000;
+  border: none;
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+.btn-move-cart:hover {
+  background: #e8c94a;
+}
+.btn-remove-wish {
+  width: 38px;
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #666;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.btn-remove-wish:hover {
+  border-color: #e05c7a;
+  color: #e05c7a;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #1a1a1a;
+  border: 1px solid #d4af37;
+  color: #fff;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  padding: 14px 22px;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.clear-all {
+  display: inline-block;
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #666;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-top: 28px;
+  transition: color 0.2s;
+}
+.clear-all:hover {
+  color: #e05c7a;
+}

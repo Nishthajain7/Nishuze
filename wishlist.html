@@ -1,0 +1,58 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NISHUZE — Wishlist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/collection.css">
+    <link rel="stylesheet" href="css/wishlist.css">
+    <script src="js/storage.js"></script>
+    <script src="js/wishlist.js"></script>
+  </head>
+  <body>
+
+    <nav>
+      <a class="nav-logo" href="index.html">NISH<span>U</span>ZE</a>
+      <ul class="nav-links">
+        <li><a href="collection.html">COLLECTION</a></li>
+        <li><a href="index.html#story">OUR STORY</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="wishlist.html" class="nav-cart" title="Wishlist" style="margin-right:8px">
+          <svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+          <span class="cart-badge" id="wish-badge">0</span>
+        </a>
+        <a href="cart.html" class="nav-cart" title="Cart">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </a>
+        <a href="login.html" class="btn">SIGN IN</a>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <h1 class="page-title">My <em>Wishlist</em></h1>
+      <p class="wish-count" id="wish-count"></p>
+    </div>
+
+    <div class="wish-page">
+      <div id="wish-content"></div>
+    </div>
+
+    <footer>
+      <div class="footer-logo">NISH<span>U</span>ZE</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="collection.html">Collection</a>
+        <a href="cart.html">Cart</a>
+      </div>
+      <p class="footer-copy">© 2026 Nishuze</p>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+  </body>
+  </html>

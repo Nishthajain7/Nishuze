@@ -74,7 +74,6 @@
   transform: translateY(-8px) scale(1.03);
 }
 
-
 .product-glow {
   position: absolute;
   width: 200px;
@@ -232,4 +231,44 @@ footer {
   font-family: "Space Mono", monospace;
   font-size: 0.6rem;
   color: var(--muted);
+}
+
+.btn-wish.wishlisted {
+  color: #e05c7a;
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #1a1a1a;
+  border: 1px solid #d4af37;
+  color: #fff;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  padding: 14px 22px;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card image area is clickable for navigation */
+.product-visual {
+  cursor: pointer;
+}
+
+.card-name {
+  cursor: pointer;
+}
+
+.card-name:hover {
+  color: #d4af37;
 }

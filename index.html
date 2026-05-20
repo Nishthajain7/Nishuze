@@ -8,10 +8,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/storage.js"></script>
+    <script src="js/index.js"></script>
 </head>
-
-<script src="script.js"></script>
 
 <body>
 
@@ -22,10 +22,21 @@
             <li><a href="index.html#story">OUR STORY</a></li>
         </ul>
         <div class="nav-right">
+            <a href="wishlist.html" class="nav-cart" title="Wishlist" style="margin-right:8px">
+                <svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                </svg>
+                <span class="cart-badge" id="wish-badge">0</span>
+            </a>
             <a href="cart.html" class="nav-cart" title="Cart">
-        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        <span class="cart-badge">3</span>
-      </a>
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                </svg>
+                <span class="cart-badge" id="cart-badge">0</span>
+            </a>
             <a href="login.html" class="btn">SIGN IN</a>
         </div>
     </nav>
@@ -77,86 +88,44 @@
             </div>
         </div>
         <div class="products-grid">
-
-            <div class="product-card">
-                <div class="product-bg product-bg-1"></div>
-                <div class="product-image">
-                    <img src="assets/product1.png" alt="Vortex Pro">
-                </div>
-                <div class="product-info">
-                    <p class="product-name">Vortex Pro</p>
-                    <p class="product-price">₹12,999</p>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-bg product-bg-2"></div>
-                <div class="product-image">
-                    <img src="assets/product2.png" alt="Ember Low">
-                </div>
-                <div class="product-info">
-                    <p class="product-name">Ember Low</p>
-                    <p class="product-price">₹9,499</p>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-bg product-bg-3"></div>
-                <div class="product-image">
-                    <img src="assets/product3.png" alt="Mira Slide">
-                </div>
-                <div class="product-info">
-                    <p class="product-name">Mira Slide</p>
-                    <p class="product-price">₹5,299</p>
-                </div>
-            </div>
-
-            <div class="product-card">
+            <div class="product-card" onclick="location.href='product.html?id=4'">
                 <div class="product-bg product-bg-4"></div>
-                <div class="product-image">
-                    <img src="assets/product4.png" alt="Onyx Boot">
-                </div>
+                <div class="product-image"><img src="assets/product4.png" alt="Onyx Boot"></div>
                 <div class="product-info">
                     <p class="product-name">Onyx Boot</p>
                     <p class="product-price">₹15,999</p>
                 </div>
             </div>
-
-            <div class="product-card">
+            <div class="product-card" onclick="location.href='product.html?id=5'">
                 <div class="product-bg product-bg-5"></div>
-                <div class="product-image">
-                    <img src="assets/product5.png" alt="Drift Sandal">
-                </div>
+                <div class="product-image"><img src="assets/product5.png" alt="Drift Sandal"></div>
                 <div class="product-info">
                     <p class="product-name">Drift Sandal</p>
                     <p class="product-price">₹3,799</p>
                 </div>
             </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/product6.png" alt="Drift Sandal">
-                </div>
+            <div class="product-card" onclick="location.href='product.html?id=6'">
+                <div class="product-image"><img src="assets/product6.png" alt="Fitness Streak"></div>
                 <div class="product-info">
                     <p class="product-name">Fitness Streak</p>
                     <p class="product-price">₹4,799</p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- STORY SECTION -->
     <section id="story">
         <div class="story-section">
             <div class="story-left">
-                <p class="big-quote">We don't make shoes. We craft the feeling of walking into a room and owning it.</p>
+                <img src="assets/story.jpg"
+                    alt="We don't make shoes. We craft the feeling of walking into a room and owning it.">
             </div>
             <div class="story-right">
                 <p class="section-label">About Nishuze</p>
-                <p class="subtitle">Founded in 2026, Nishuze began as a small project in Hyderabad dedicated to the
-                    belief that footwear should be as bold as the person wearing it. Each pair is designed with
-                    obsessive attention to material, form, and feel.</p>
+                <p class="subtitle">One random night, a friend sent a picture of a chappal brand called “Nishu” into our
+                    Discord group to make fun of my nickname (Nishu). What began as a dumb meme slowly turned into
+                    sketches, ideas, late-night designs, and eventually a real brand. We realized something powerful.
+                    The best brands don’t always start in boardrooms. Sometimes they start in group chats.</p>
                 <p class="subtitle">We source premium leathers and textiles from certified artisans, ensuring every
                     stitch carries the weight of intention and the lightness of mastery.</p>
                 <a href="collection.html" class="btn" style="width:fit-content;margin-top:20px;">Explore
@@ -179,7 +148,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-bottom">
             <p class="footer-copy">© 2026 Nishuze. All rights reserved.</p>
