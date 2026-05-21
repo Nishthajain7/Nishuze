@@ -260,7 +260,6 @@ footer {
   transform: translateY(0);
 }
 
-/* Card image area is clickable for navigation */
 .product-visual {
   cursor: pointer;
 }

@@ -22,7 +22,6 @@ const COLORS = [
     { name: 'Red', hex: '#c0392b' },
 ];
 
-/* ── resolve product from URL ── */
 const pid = parseInt(new URLSearchParams(location.search).get('id') || '1');
 const product = SHOES.find(p => p.id === pid) || SHOES[0];
 console.log(product)
@@ -48,7 +47,6 @@ if (product.badge) {
     b.style.display = 'block';
 }
 
-/* ── main image + thumbs ── */
 const mainImg = document.getElementById('main-img');
 const thumbRow = document.getElementById('thumb-row');
 const imgs = [product.image, 'assets/product2.png', 'assets/product4.png', 'assets/product5.png'];
@@ -65,7 +63,6 @@ imgs.forEach((src, i) => {
     thumbRow.appendChild(t);
 });
 
-/* ── sizes ── */
 let selectedSize = 'UK 9';
 SIZES.forEach(s => {
     const btn = document.createElement('button');
@@ -80,7 +77,6 @@ SIZES.forEach(s => {
     document.getElementById('size-grid').appendChild(btn);
 });
 
-/* ── colors ── */
 let selectedColor = COLORS[0].name;
 COLORS.forEach(c => {
     const dot = document.createElement('div');
@@ -96,7 +92,6 @@ COLORS.forEach(c => {
     document.getElementById('color-row').appendChild(dot);
 });
 
-/* ── related ── */
 const related = SHOES.filter(p => p.id !== product.id).sort(() => 0.5 - Math.random()).slice(0, 4);
 document.getElementById('related-grid').innerHTML = related.map(p =>
     '<a class="pdp-rel-card" href="product.html?id=' + p.id + '">' +

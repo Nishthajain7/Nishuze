@@ -59,7 +59,6 @@
   text-decoration: none;
 }
 
-/* Wishlist grid */
 .wish-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -163,7 +162,6 @@
   color: #e05c7a;
 }
 
-/* Toast */
 .toast {
   position: fixed;
   bottom: 30px;
